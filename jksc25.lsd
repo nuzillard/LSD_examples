@@ -1,0 +1,219 @@
+; jksc25
+; RSC Adv., 2017, 7, 15416-15427
+; DOI 10.1039/c6ra28584h
+; Compound 1
+; (17S)-24,25,26,27,29-Pentanor-3-oxo-lanost-8-en-23,17a-olide
+
+; FORM "C 25 H 36 O 3"
+; PIEC 1
+
+ELIM 1 4 ; 1 HMBC correlation can be 4J
+
+; LSD atom numbering (Hs excepted)
+MULT 1 C 2 0 ; Atom 1 is a C, is hybridized sp2, and has 0 H atom attached
+MULT 2 C 2 0
+MULT 3 C 2 0
+MULT 4 C 2 0
+MULT 5 C 3 0
+MULT 6 C 3 0
+MULT 7 C 3 1
+MULT 8 C 3 0
+MULT 9 C 3 1
+MULT 10 C 3 1
+MULT 11 C 3 2
+MULT 12 C 3 2
+MULT 13 C 3 2
+MULT 14 C 3 2
+MULT 15 C 3 0
+MULT 16 C 3 2
+MULT 17 C 3 3
+MULT 18 C 3 2
+MULT 19 C 3 2
+MULT 20 C 3 2
+MULT 21 C 3 2
+MULT 22 C 3 3
+MULT 23 C 3 3
+MULT 24 C 3 3
+MULT 25 C 3 3
+MULT 26 O 2 0
+MULT 27 O 2 0
+MULT 28 O 3 0
+
+; the SHIX commands are ignored by LSD
+; and were added as documentation
+SHIX 1  213.1 ; The chemical shift of C-1 is 213.1 ppm
+SHIX 2  177.1
+SHIX 3  135.8
+SHIX 4  133.1
+SHIX 5   98.4
+SHIX 6   50.9
+SHIX 7   49.7
+SHIX 8   49.0
+SHIX 9   45.2
+SHIX 10  41.9
+SHIX 11  39.3
+SHIX 12  39.2
+SHIX 13  38.0
+SHIX 14  37.1
+SHIX 15  36.8
+SHIX 16  31.5
+SHIX 17  25.9
+SHIX 18  25.4
+SHIX 19  24.7
+SHIX 20  22.1
+SHIX 21  21.5
+SHIX 22  18.2
+SHIX 23  17.9
+SHIX 24  17.7
+SHIX 25  11.7
+
+; H atom numbering
+HSQC 1 1 ; should not exist, see below about HMBC (11 18 21) 5
+HSQC 2 2 ; idem
+HSQC 3 3 ; idem
+HSQC 4 4 ; idem
+HSQC 5 5 ; idem
+HSQC 6 6 ; idem
+HSQC 7 7
+HSQC 8 8 ; idem
+HSQC 9 9
+HSQC 10 10
+HSQC 11 11
+HSQC 12 12
+HSQC 13 13
+HSQC 14 14
+HSQC 15 15 ; idem
+HSQC 16 16
+HSQC 17 17
+HSQC 18 18 ; C-18 is bound to H-18 (even though there are two of them)
+HSQC 19 19
+HSQC 20 20
+HSQC 21 21
+HSQC 22 22
+HSQC 23 23
+HSQC 24 24
+HSQC 25 25
+
+
+COSY 7 9 ; H-7 and H-9 correlate in the COSY spectum (strong intensity, 3J)
+COSY 7 20
+COSY 10 12
+COSY 13 14
+COSY 23 10
+COSY 25 9
+
+BOND 1 26 ; C=O ketone
+BOND 2 27 ; C=O lactone
+BOND 2 28 ; C-O lactone
+BOND 5 28 ; O-C lactone
+BOND 3 4 ; C=C
+
+HMBC 1 13 ; C-1 correlates with H-13 in the HMBC spectrum
+HMBC 1 9
+HMBC 1 14
+HMBC 1 25
+
+HMBC 2 12
+HMBC 2 10
+HMBC 2 12
+
+HMBC 3 20 ; low intensity
+HMBC 3 16 ; idem
+HMBC 3 17
+
+HMBC 4 14 ; idem
+HMBC 4 19 ; idem
+HMBC 4 24
+
+; C-5 correlates with H-11 or H-18 or H-21
+; This should be written HMBC 5 (11 18 21).
+; The LSD syntax does not allow it, sorry.
+; This is equivalent to HMBC (11 18 21) 5
+; because of the numbering of Hs according to Cs uses HSQC data.
+; this forces to "invent" an H-5 that does not exist
+; and explains why a few quaternary Cs (among which C-5)
+; are declared in the HSQC section. Therefore:
+HMBC (11 18 21) 5
+HMBC 5 12
+HMBC 5 16
+HMBC 5 23
+HMBC 5 22
+
+HMBC (11 18 21) 6
+HMBC 6 16
+HMBC 6 19
+HMBC 6 17
+HMBC 6 22
+
+HMBC 7 9
+HMBC (14 18) 7
+HMBC 7 20
+HMBC 7 24
+HMBC 7 25
+
+HMBC 8 19
+HMBC (11 18 21) 8
+HMBC 8 19
+HMBC (16 20) 8
+HMBC 8 17
+HMBC 8 22
+
+HMBC 9 13
+HMBC (16 20) 9
+HMBC 9 7
+HMBC 9 25
+
+HMBC 10 12
+HMBC (11 18 21) 10
+HMBC 10 12
+HMBC 10 23
+
+HMBC 11 16
+
+HMBC 12 10
+HMBC 12 23
+
+HMBC 13 14
+
+HMBC 14 13
+HMBC 14 24
+
+HMBC 15 13
+HMBC 15 14
+HMBC 15 20
+HMBC 15 7
+HMBC 15 24
+
+HMBC (11 18 21) 16
+HMBC 16 17
+
+HMBC 17 16
+
+HMBC 18 20
+
+HMBC 19 22
+
+HMBC 20 9
+HMBC (14 18) 20
+HMBC 20 7
+
+HMBC 21 19
+
+HMBC 22 19
+
+HMBC 23 12
+HMBC 23 10
+
+HMBC 24 14
+HMBC 24 7
+
+HMBC 25 13
+HMBC 25 9
+
+QUAT L1 ; L1 is the list of quaternary carbons
+LIST L2 17 22 24 ; L2 is the list of the indexes of methyl singlets
+PROP L2 1 L1 ; each singlet methyl has exactly one quaternary carbon as neighbor
+
+CH   L3 ; L3 is the list of methine carbons
+LIST L4 23 25 ; L4 is the list of the indexes of methyl doublets
+PROP L4 1 L3 ; each doublet methyl has exactly one methine carbon as neighbor
