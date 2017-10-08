@@ -2,5 +2,5 @@
 
 This repository is intended to contain
 a collection of
-[LSD](www.univ-reims.fr/LSD)
+[LSD](http://www.univ-reims.fr/LSD)
 input files.
