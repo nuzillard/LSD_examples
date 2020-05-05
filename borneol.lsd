@@ -1,0 +1,60 @@
+; Borneol and the isoprenic rule.
+
+; description of the targetted molecule, borneol
+
+; atom 1 is a carbon, sp3 hybridized, bound to 1 hydrogen atom.
+; hydrogen atoms are anonymous
+MULT 1 C 3 1
+MULT 2 C 3 0
+MULT 3 C 3 2
+MULT 4 C 3 2
+MULT 5 C 3 1
+MULT 6 C 3 2
+MULT 7 C 3 3
+MULT 8 C 3 0
+MULT 9 C 3 3
+MULT 10 C 3 3
+MULT 11 O 3 1
+
+; Atoms 1 and 2 are bound together
+BOND 1 2
+BOND 2 3
+BOND 3 4
+BOND 4 5
+BOND 5 6
+BOND 6 1
+BOND 2 8
+BOND 8 5
+BOND 7 8
+BOND 8 9
+BOND 2 10
+BOND 1 11
+
+; Description of the substructure pattern to be searched,
+; made of two isoprene units
+
+; carbon atoms in unit 1, any hybridization, any number of bound H atoms
+SSTR S1 C (2 3) (0 1 2 3)
+SSTR S2 C (2 3) (0 1)
+SSTR S3 C (2 3) (0 1 2 3)
+SSTR S4 C (1 2 3) (0 1 2)
+SSTR S5 C (1 2 3) (0 1 2 3)
+
+; atoms in unit 2
+SSTR S11 C (2 3) (0 1 2 3)
+SSTR S12 C (2 3) (0 1)
+SSTR S13 C (2 3) (0 1 2 3)
+SSTR S14 C (1 2 3) (0 1 2)
+SSTR S15 C (1 2 3) (0 1 2 3)
+
+; bonds in unit 1, any type
+LINK S1 S2
+LINK S2 S3
+LINK S2 S4
+LINK S4 S5
+
+; bonds in unit 2
+LINK S11 S12
+LINK S12 S13
+LINK S12 S14
+LINK S14 S15
