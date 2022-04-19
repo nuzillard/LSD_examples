@@ -1,0 +1,133 @@
+; Lobocrassin A
+; data by ACD/Labs
+
+; molecular formula
+FORM "C 20 H 29 Cl 1 O 4"
+
+; expecting a connected (one-piece) solution
+PIEC 1
+
+SHIX  1 44.1 ; the 13C NMR chemical shift of C-1 is 44.1
+SHIX  2 23.5
+SHIX  3 60.3
+SHIX  4 64.0
+SHIX  5 38.0
+SHIX  6 23.4
+SHIX  7 122.5 ; presumably sp2
+SHIX  8 135.2 ; presumably sp2
+SHIX  9 38.8
+SHIX 10 24.8
+SHIX 11 130.8 ; presumably sp2
+SHIX 12 130.1 ; presumably sp2
+SHIX 13 43.0
+SHIX 14 80.0
+SHIX 15 77.2
+SHIX 16 44.5
+SHIX 17 173.1 ; presumably a C of a carbonyl group (sp2)
+SHIX 18 17.0
+SHIX 19 15.7
+SHIX 20 17.4
+
+MULT  1 C 3 1 ; atom 1 is a carbon, sp3 hybridized, bound to 1 H atom
+MULT  2 C 3 2
+MULT  3 C 3 1
+MULT  4 C 3 0
+MULT  5 C 3 2
+MULT  6 C 3 2
+MULT  7 C 2 1
+MULT  8 C 2 0
+MULT  9 C 3 2
+MULT 10 C 3 2
+MULT 11 C 2 1
+MULT 12 C 2 0
+MULT 13 C 3 2
+MULT 14 C 3 1
+MULT 15 C 3 0
+MULT 16 C 3 2
+MULT 17 C 2 0 ; the C of the carbonyl group
+MULT 18 C 3 3
+MULT 19 C 3 3
+MULT 20 C 3 3
+MULT 21 Cl 3 0 ; the chlorine atom
+MULT 22 O 3 1 ; the O of the OH group. The H atom count (29) is reached now.
+MULT 23 O 2 0 ; the O of the carbonyl group, sp2
+MULT 24 O 3 0
+MULT 25 O 3 0
+
+BOND 17 23 ; the C=O bond
+
+HSQC 1 1 ; C-1 is bound to H-1 according to the HSQC spectrum
+HSQC 2 2
+HSQC 3 3
+HSQC 5 5
+HSQC 6 6
+HSQC 7 7
+HSQC 9 9
+HSQC 10 10
+HSQC 11 11
+HSQC 13 13
+HSQC 14 14
+HSQC 16 16
+HSQC 18 18
+HSQC 19 19
+HSQC 20 20
+HSQC 22 22 ; needed for the HMBC correlation of the H of the OH group.
+
+; no COSY data
+
+HMBC 2 1 ; C-2 correlates with H-1 in the HMBC spectrum
+HMBC 13 1
+HMBC 14 1
+HMBC 16 1
+HMBC 1 2
+HMBC 3 2
+HMBC 4 2
+HMBC 14 2
+HMBC 15 2
+HMBC 2 3
+HMBC 3 5
+HMBC 4 5
+HMBC 7 5
+HMBC 4 6
+HMBC 7 6
+HMBC 8 6
+HMBC 6 7
+HMBC 9 7
+HMBC 19 7
+HMBC 7 9
+HMBC 8 9
+HMBC 10 9
+HMBC 11 9
+HMBC 19 9
+HMBC 8 10
+HMBC 9 10
+HMBC 11 10
+HMBC 12 10
+HMBC 9 11
+HMBC 10 11
+HMBC 20 11
+HMBC 1 13
+HMBC 11 13
+HMBC 12 13
+HMBC 14 13
+HMBC 12 14
+HMBC 1 16
+HMBC 15 16
+HMBC 17 16
+HMBC 3 18
+HMBC 4 18
+HMBC 5 18
+HMBC 7 19
+HMBC 8 19
+HMBC 9 19
+HMBC 11 20
+HMBC 12 20
+HMBC 13 20
+HMBC 1 22
+HMBC 15 22
+HMBC 16 22
+HMBC 17 22
+
+QUAT L1 ; L1 is the list of quaternary carbons
+LIST L2 18 19 20 ; L2 is the list of the C atoms with shielded singlets Me groups in 1H-NMR
+PROP L2 1 L1 ; C-18, C-19, and C-20 have only quaternary carbons as neighbors
