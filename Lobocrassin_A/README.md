@@ -18,4 +18,4 @@ The correct structure of Lobocrassin A, in file lobocrassinA.png, was ranked at 
 but without any defined configuration at double bonds and asymmetric centers.
 
 Another structure of a cembrane diterpene was reported using the LSD software 
-([free download](http://bbp4b.litbang.kkp.go.id/squalen-bulletin/index.php/squalen/article/view/177/pdf) ).
+([free download](http://bbp4b.litbang.kkp.go.id/squalen-bulletin/index.php/squalen/article/view/177/pdf)).
