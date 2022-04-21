@@ -1,5 +1,6 @@
 ; Lobocrassin A
-; data by ACD/Labs
+; data by ACD/Labs: https://www.acdlabs.com/comm/elucidation/2022_03.php
+; original data from: Mar. Drugs 2011, 9, 1319-1331; doi:10.3390/md9081319
 
 ; molecular formula
 FORM "C 20 H 29 Cl 1 O 4"
@@ -131,3 +132,50 @@ HMBC 17 22
 QUAT L1 ; L1 is the list of quaternary carbons
 LIST L2 18 19 20 ; L2 is the list of the C atoms with shielded singlets Me groups in 1H-NMR
 PROP L2 1 L1 ; C-18, C-19, and C-20 have only quaternary carbons as neighbors
+
+; SUBS 1 ; take into account substructure information
+SUBS 0 ; do not take into account substructure information
+
+; cembrane substructure, atoms
+SSTR S1 C (2 3) (0 1)
+SSTR S2 C (2 3) (0 1 2)
+SSTR S3 C (2 3) (0 1 2)
+SSTR S4 C (2 3) (0 1)
+SSTR S5 C (2 3) (0 1 2)
+SSTR S6 C (2 3) (0 1 2)
+SSTR S7 C (2 3) (0 1 2)
+SSTR S8 C (2 3) (0 1)
+SSTR S9 C (2 3) (0 1 2)
+SSTR S10 C (2 3) (0 1 2)
+SSTR S11 C (2 3) (0 1 2)
+SSTR S12 C (2 3) (0 1)
+SSTR S13 C (2 3) (0 1 2)
+SSTR S14 C (2 3) (0 1 2)
+SSTR S15 C (2 3) (0 1)
+SSTR S16 C (2 3) (0 1 2 3)
+SSTR S17 C (2 3) (0 1 2 3)
+SSTR S18 C (2 3) (0 1 2 3)
+SSTR S19 C (2 3) (0 1 2 3)
+SSTR S20 C (2 3) (0 1 2 3)
+
+; cembrane substructure, bonds
+LINK S1 S2
+LINK S2 S3
+LINK S3 S4
+LINK S4 S5
+LINK S5 S6
+LINK S6 S7
+LINK S7 S8
+LINK S8 S9
+LINK S9 S10
+LINK S10 S11
+LINK S11 S12
+LINK S12 S13
+LINK S13 S14
+LINK S1 S14
+LINK S1 S15
+LINK S15 S16
+LINK S15 S17
+LINK S4 S18
+LINK S8 S19
+LINK S12 S20
