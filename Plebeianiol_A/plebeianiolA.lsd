@@ -1,0 +1,125 @@
+; https://www.acdlabs.com/blog/plebeianiol-a/
+
+FORM "C 20 H 30 O 5"
+PIEC 1
+DUPL 1
+; no very-long range HMBC correlation
+
+; atom id, chemical symbol, hydridization state, number of attached H atoms
+MULT  1 C 3 0
+MULT  2 C 3 1
+MULT  3 C 3 1
+MULT  4 C 3 2
+MULT  5 C 3 0
+MULT  6 C 2 0
+MULT  7 C 2 0
+MULT  8 C 2 0 ; is a quaternary C
+MULT  9 C 2 0
+MULT 10 C 2 1
+MULT 11 C 2 0 ; is a quaternary C
+MULT 12 C 3 1
+MULT 13 C 3 2
+MULT 14 C 3 1
+MULT 15 C 3 3
+MULT 16 C 3 3
+MULT 17 C 3 2
+MULT 18 C 3 3
+MULT 19 C 3 3
+MULT 20 C 3 2
+MULT 21 O 3 1
+MULT 22 O 3 1
+MULT 23 O 3 1
+MULT 24 O 3 1
+MULT 25 O 3 1
+
+; Experimental chemical shift values
+SHIX  1 38.6
+SHIX  2 81.8
+SHIX  3 66.8
+SHIX  4 38.0
+SHIX  5 43.8
+SHIX  6 130.2
+SHIX  7 143.0
+SHIX  8 126.3
+SHIX  9 141.6
+SHIX 10 117.5
+SHIX 11 131.9
+SHIX 12 26.4
+SHIX 13 18.2
+SHIX 14 52.1
+SHIX 15 18.1
+SHIX 16 29.6
+SHIX 17 31.7
+SHIX 18 22.3
+SHIX 19 22.4
+SHIX 20 65.3
+
+; default numbering of H atoms
+HSQC 2 2
+HSQC 3 3
+HSQC 4 4
+HSQC 10 10
+HSQC 12 12
+HSQC 13 13
+HSQC 14 14
+HSQC 15 15
+HSQC 16 16
+HSQC 17 17
+HSQC 18 18
+HSQC 19 19
+HSQC 20 20
+
+; HMBC C H
+HMBC 15 2
+HMBC 16 2
+HMBC 2 3
+HMBC 8 10 ; Table 1 says HMBC 10 8 but 8 is a quaternary carbon
+HMBC 9 10
+HMBC 18 12
+HMBC 19 12
+HMBC 6 14
+HMBC 1 15
+HMBC 14 15
+HMBC 16 15
+HMBC 1 16
+HMBC 14 16
+HMBC 15 16
+HMBC 11 17
+HMBC 13 17
+HMBC 19 18
+HMBC 12 18
+HMBC 18 19
+HMBC 12 19
+HMBC 4 20
+HMBC 5 20
+HMBC 6 20
+
+; L1: list of C atoms
+CARB L1
+; L2: list of O atoms
+HETE L2
+
+; L3: list of C atoms bound to an oxygen atom
+LIST L3 2 3 7 9 20
+PROP L3 1 L2
+
+; L4: list of C atoms only bound to C atoms
+LIST L4 1 4 5 12 13 14 15 16 17 18 19
+PROP L4 0 L1
+
+; penta-substituted aromatic ring
+; atoms of the aromatic ring
+SSTR S1 C 2 1
+SSTR S2 C 2 0
+SSTR S3 C 2 0
+SSTR S4 C 2 0
+SSTR S5 C 2 0
+SSTR S6 C 2 0
+
+; bonds of the aromatic ring
+LINK S1 S2
+LINK S2 S3
+LINK S3 S4
+LINK S4 S5
+LINK S5 S6
+LINK S6 S1
