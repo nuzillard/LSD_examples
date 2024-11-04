@@ -2,9 +2,9 @@
 
 This repository is intended to contain
 a collection of
-[LSD](http://www.univ-reims.fr/LSD)
+[LSD](https://nuzillard.github.io/LSD/)
 and
-[PyLSD](http://eos.univ-reims.fr/LSD/JmnSoft/PyLSD/)
+[PyLSD](https://nuzillard.github.io/PyLSD/)
 input files.
 
 File `c10h16o.lsd` shows how to enumerate isomers with PyLSD.
